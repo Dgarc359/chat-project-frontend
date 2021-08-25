@@ -2,7 +2,7 @@ import Message from "../../models/Message";
 import {IAction} from "../actions/message-actions";
 
 export interface MessageState {
-    records: Message[];
+    messages: Message[];
 }
 
 /**
