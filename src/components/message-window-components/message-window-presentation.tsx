@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { Table } from "react-bootstrap";
 import Message from "../../models/Message";
 import {Button} from "react-bootstrap";
-import { w3cwebsocket as W3CWebSocket } from "websocket";
+import { w3cwebsocket as W3CWebSocket, IMessageEvent } from "websocket";
 
 interface IMessageWindowPresentationProps{
     records: Message[];
@@ -18,6 +18,10 @@ export default function MessageWindowPresentation(props: IMessageWindowPresentat
         client.onopen = () => {
             console.log('websocket connected');
         }
+        client.onmessage = (message) => {
+            console.log("message received: ", message.data);
+        }
+        
     },[]);
 
     function handleClick(){
