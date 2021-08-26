@@ -1,7 +1,10 @@
-export default interface Message {
+// export default interface Message {
 
-    user?: string;
+//     user?: string;
+//     message?: string;
+//     time?: string;
+//     id?: number;
+// }
+export default interface Message {
     message?: string;
-    time?: string;
-    id?: number;
 }
